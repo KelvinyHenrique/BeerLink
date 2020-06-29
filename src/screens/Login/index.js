@@ -5,7 +5,7 @@ import { TextInput, TouchableHighlight } from 'react-native-gesture-handler';
 
 const screenHeight = Math.round(Dimensions.get('window').height);
 
-const thirty = (20 * screenHeight) / 100;
+const thirty = (10 * screenHeight) / 100;
 
 
 function Login() {

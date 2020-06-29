@@ -11,6 +11,10 @@ function FirstScreen() {
         navigation.navigate('Login');
     }
 
+    const handleNavigationSignIn = () => {
+        navigation.navigate('SignIn');
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.BoxContent}>
@@ -29,7 +33,7 @@ function FirstScreen() {
                             <GoogleIcon  width={25} height={25}/>
                         </View>
                     </TouchableHighlight>
-                    <TouchableHighlight style={styles.btncreateAccount}>
+                    <TouchableHighlight style={styles.btncreateAccount} onPress={handleNavigationSignIn}>
                         <Text style={styles.btnTextcreateAccount}>Crie sua conta</Text>
                     </TouchableHighlight>
                 </View>

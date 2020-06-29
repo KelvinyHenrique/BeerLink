@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
 import Login from '../screens/Login';
-
+import SignIn from '../screens/SignIn';
 
 const Stack = createStackNavigator();
 
@@ -21,8 +21,7 @@ export default function TransationsStack() {
           },
           headerTintColor:'#fff'
         }}/>
-       {/* <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Settings" component={Settings} /> */}
+      <Stack.Screen name="SignIn" component={SignIn} /> 
       </Stack.Navigator>
     );
 }

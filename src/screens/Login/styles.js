@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     boxContainerBottom:{
         width:'100%',
-        height:'80%',
+        height:'90%',
         alignItems:'center',
         backgroundColor:'#FFF',
         borderTopLeftRadius:33,

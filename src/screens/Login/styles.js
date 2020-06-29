@@ -10,12 +10,15 @@ export default StyleSheet.create({
         backgroundColor:'#BA0C2F',
     },
     BoxHeader:{
-        width:'100%',
+        marginTop:15,
+        width:'90%',
         backgroundColor:'#BA0C2F',
+        alignSelf:'center'
     },
     boxContainerBottom:{
         width:'100%',
         height:'80%',
+        alignItems:'center',
         backgroundColor:'#FFF',
         borderTopLeftRadius:33,
         borderTopRightRadius:33,    

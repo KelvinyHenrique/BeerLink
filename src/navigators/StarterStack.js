@@ -21,7 +21,14 @@ export default function TransationsStack() {
           },
           headerTintColor:'#fff'
         }}/>
-      <Stack.Screen name="SignIn" component={SignIn} /> 
+      <Stack.Screen name="SignIn" component={SignIn} options={{
+            title:false,
+          headerShown:true,
+          headerStyle: {
+              backgroundColor:'#BA0C2F'
+          },
+          headerTintColor:'#fff'
+          }}/>
       </Stack.Navigator>
     );
 }

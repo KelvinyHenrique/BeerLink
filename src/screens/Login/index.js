@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './styles';
-import { View, Animated, Dimensions, Easing, Text } from 'react-native';
+import { View, Animated, Dimensions, Easing, Text, TouchableOpacity } from 'react-native';
 import { TextInput, TouchableHighlight } from 'react-native-gesture-handler';
 
 const screenHeight = Math.round(Dimensions.get('window').height);
@@ -25,6 +25,9 @@ function Login() {
         fadeIn();
     }, []);
 
+    const handleNavigationSignIn = () => {
+        navigation.navigate('SignIn');
+    }
 
     return (
         <View style={styles.container}>
@@ -53,8 +56,8 @@ function Login() {
                         </TouchableHighlight>
                     </View>
                 </View>
-                <View style={{width:'100%', alignItems:'center', justifyContent:'flex-end', height:50, flexDirection:'column'}}>
-                    <Text>Não tem conta? Cadastre-se</Text>
+                <View style={{ width: '100%', alignItems: 'center', justifyContent: 'center', height: 50, flexDirection: 'row' }}>
+                    <Text style={{fontSize:17, marginRight:7, color:'#000'}}>Já tem uma conta?</Text><TouchableOpacity onPress={handleNavigationSignIn}><Text style={{color:'#BA0C2F', fontWeight:'bold', fontSize:16}}>Entrar</Text></TouchableOpacity>
                 </View>
             </View>
         </View>

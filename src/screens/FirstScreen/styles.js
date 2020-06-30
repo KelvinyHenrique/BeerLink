@@ -21,17 +21,17 @@ export default StyleSheet.create({
        justifyContent:'space-around'
     },
     welcome:{
-        fontSize:38,
+        fontSize:40,
         color:'#FFF',
         fontWeight:'bold'
     },
     title:{
         color:'#fff',
-        fontSize:19,
+        fontSize:20,
     },
     subtitle:{
         color:'#FFF',
-        fontSize:19,
+        fontSize:20,
         fontWeight:'bold',
     },
     boxButons:{
@@ -43,7 +43,7 @@ export default StyleSheet.create({
     },
     btnsigninGoogle:{
         width:'100%',
-        height:45,
+        height:50,
         borderRadius:13,
         backgroundColor:'#FFF',
         alignItems:'center',
@@ -58,7 +58,7 @@ export default StyleSheet.create({
 
     btncreateAccount:{
         width:'100%',
-        height:45,
+         height:50,
         borderWidth:2,
         borderColor:'#fff',
         borderRadius:13,

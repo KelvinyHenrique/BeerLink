@@ -13,6 +13,7 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.6.1",
     "@react-navigation/stack": "^5.6.2",
+    "fluidbottomnavigation-rn": "^0.1.1",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-3d-model-view": "^1.2.0",
@@ -23,6 +24,7 @@
     "react-native-screens": "^2.9.0",
     "react-native-svg": "^12.1.0",
     "react-native-svg-transformer": "^0.14.3",
+    "react-native-view-overflow": "0.0.5",
     "react-native-zip-archive": "^5.0.2",
     "rn-fetch-blob": "^0.12.0"
   },

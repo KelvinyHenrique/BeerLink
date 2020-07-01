@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import styles from './styles';
 import { View, Animated, Dimensions, Easing, Text, TouchableOpacity } from 'react-native';
 import { TextInput, TouchableHighlight } from 'react-native-gesture-handler';
-
+import { useNavigation } from '@react-navigation/native';
 const screenHeight = Math.round(Dimensions.get('window').height);
 
 const thirty = (10 * screenHeight) / 100;
@@ -11,6 +11,7 @@ const thirty = (10 * screenHeight) / 100;
 function Login() {
 
     const fadeAnim = useRef(new Animated.Value(screenHeight)).current;
+    const navigation = useNavigation(); 
 
     const fadeIn = () => {
         // Will change fadeAnim value to 1 in 5 seconds
@@ -28,6 +29,12 @@ function Login() {
     const handleNavigationSignIn = () => {
         navigation.navigate('SignIn');
     }
+
+    const goToHome = () => {
+        navigation.navigate('Home')
+    }
+
+
 
     return (
         <View style={styles.container}>
@@ -51,7 +58,7 @@ function Login() {
                     </View>
                     <View style={{width:'100%', alignItems:'flex-start', height:100, justifyContent:'center',flexDirection:'column'}}>
                         <Text style={{fontSize:15, color: '#BA0C2F'}}>Esqueceu a senha?</Text>
-                        <TouchableHighlight style={{width: 350, height:47, backgroundColor:'#BA0C2F', marginTop:10, borderRadius:7, alignItems:'center', justifyContent:'center', marginTop:20}} >
+                        <TouchableHighlight style={{width: 350, height:47, backgroundColor:'#BA0C2F', marginTop:10, borderRadius:7, alignItems:'center', justifyContent:'center', marginTop:20}} onPress={goToHome}>
                             <Text style={{fontSize:17,fontWeight:'bold', color:'#FFF'}}>Entrar</Text>
                         </TouchableHighlight>
                     </View>
@@ -62,7 +69,7 @@ function Login() {
             </View>
         </View>
     );
-}
+}   
 
 
 export default Login;

@@ -4,7 +4,6 @@ import FirstScreen from '../screens/FirstScreen';
 
 import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
-import Live from '../screens/Live';
 import Home from '../screens/Home'; 
 
 const Stack = createStackNavigator();

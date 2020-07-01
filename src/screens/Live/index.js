@@ -1,25 +1,24 @@
-import React, {useRef, useState} from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-
+import React, { useRef, useState } from 'react';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
-
 import Chat from './Chat/index';
+import { Avatar } from 'react-native-paper';
 
-// You can import from local files
 
-// or any pure javascript modules available in npm
-import {Avatar} from 'react-native-paper';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const interations = [
   {
     name: 'Tio Bill',
     image: "https://conteudo.imguol.com.br/c/noticias/45/2020/02/19/bill-gates-1582117373404_v2_1920x1280.jpg"
   },
-   {
+  {
     name: 'Caio',
     image: "https://avatars3.githubusercontent.com/u/5342402?s=460&v=4"
   },
-   {
+  {
     name: 'Prates',
     image: "https://avatars3.githubusercontent.com/u/36752711?s=400&u=740b3ce32fb6ce710151f66bdf65cc0cc3580cdc&v=4"
   },
@@ -38,74 +37,75 @@ const interations = [
   }
 ]
 
-function interationBar(image,name){
-  return(
-    <View> 
-      <Avatar.Image size={40} source={{uri: image}} />
+function interationBar(image, name) {
+  return (
+    <View>
+      <Avatar.Image size={40} source={{ uri: image }} />
       <Text style={{
         padding: 10
       }}>
-       {name}
+        {name}
       </Text>
-    </View> 
-  ); 
+    </View>
+  );
 }
 
 
 export default function Live() {
 
-const playerRef = useRef(null);
-const [playing, setPlaying] = useState(true);
+  const playerRef = useRef(null);
+  const [playing, setPlaying] = useState(true);
 
   return (
     <View style={styles.container}>
-  <YoutubePlayer
+      <YoutubePlayer
 
-  ref={playerRef}
-  height={200}
-  videoId={"8KrokLPJIFs"}
-  play={playing}
-  onChangeState={event => console.log(event)}
-  onReady={() => console.log("ready")}
-  onError={e => console.log(e)}
-  onPlaybackQualityChange={q => console.log(q)}
-  volume={40}
-  playbackRate={1}
-  playerParams={{
-    cc_lang_pref: "pt",
-    showClosedCaptions: true
-  }}
-/>
-<View style={{
-  height: 320, 
-  backgroundColor: "#FfF",
-  borderRadius: 20
-}}>
-  <Text style={{
-    color: "#7C7C7C",
-    marginLeft: 32, 
-    marginBottom: 5,
-    size: 21
-
-  }}>
-  Últimas Interações 
-  </Text>
-  <View style={{
-    display: 'flex',
-    flexDirection: 'row',
-    marginLeft: 20
-  }}>
-    {interations.map((e)=>interationBar(e.image, e.name))}
-  </View>
+        ref={playerRef}
+        height={windowHeight/3}
+        videoId={"8KrokLPJIFs"}
+        play={playing}
+        onChangeState={event => console.log(event)}
+        onReady={() => console.log("ready")}
+        onError={e => console.log(e)}
+        onPlaybackQualityChange={q => console.log(q)}
+        volume={40}
+        playbackRate={1}
+        playerParams={{
+          cc_lang_pref: "pt",
+          showClosedCaptions: true
+        }}
+      />
       <View style={{
-        height: 230, 
-        backgroundColor: "#E6E6E6",
-        borderRadius: 20,
-        marginTop: 3
-      }}> 
-      <Chat />
+        width: '100%',
+        height:windowHeight/5,
+        backgroundColor: "#FfF",
+        borderRadius: 20
+      }}>
+        <Text style={{
+          color: "#7C7C7C",
+          marginLeft: 32,
+          marginBottom: 5,
+          size: 21
+
+        }}>
+          Últimas Interações
+  </Text>
+        <View style={{
+          display: 'flex',
+          flexDirection: 'row',
+          marginLeft: 20
+        }}>
+          {interations.map((e) => interationBar(e.image, e.name))}
+        </View>
+        <View style={{
+          height: 230,
+          backgroundColor: "#E6E6E6",
+          borderRadius: 20,
+          marginTop: 3
+        }}>
+          <Chat />
+        </View>
       </View>
-</View>      
     </View>
   );
 }
@@ -113,8 +113,9 @@ const [playing, setPlaying] = useState(true);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     backgroundColor: '#000',
     padding: 0,
+    flexDirection:'column',
   },
 });

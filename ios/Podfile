@@ -79,6 +79,8 @@ target 'megapp' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   target 'megappTests' do
     inherit! :complete
     # Pods for testing

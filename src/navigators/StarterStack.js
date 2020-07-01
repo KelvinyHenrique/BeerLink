@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
 import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
+import Live from '../screens/Live'
 
 const Stack = createStackNavigator();
 
@@ -10,6 +11,9 @@ export default function TransationsStack() {
 
     return( 
         <Stack.Navigator>
+         <Stack.Screen name="Live" component={Live}  options={{
+          headerShown:false,
+        }}/> 
         <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{
           headerShown:false,
         }}/>

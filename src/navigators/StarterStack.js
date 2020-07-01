@@ -3,11 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
 import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
+
 import Home from '../screens/Home';
 
 const Stack = createStackNavigator();
 
-export default function TransationsStack() {
+export default function TransationsStack(){
 
   return (
     <Stack.Navigator>

@@ -33,11 +33,7 @@ export default function TransationsStack() {
 
       <Stack.Screen name="Home" component={Home} options={{
         title: false,
-        headerShown: true,
-        headerStyle: {
-          backgroundColor: '#BA0C2F'
-        },
-        headerTintColor: '#fff'
+        headerShown:false,
       }} />
     </Stack.Navigator>
   );

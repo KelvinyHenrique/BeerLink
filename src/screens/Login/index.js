@@ -11,7 +11,7 @@ const thirty = (10 * screenHeight) / 100;
 function Login() {
 
     const fadeAnim = useRef(new Animated.Value(screenHeight)).current;
-    const navigation = useNavigation();
+    const navigation = useNavigation(); 
 
     const fadeIn = () => {
         // Will change fadeAnim value to 1 in 5 seconds

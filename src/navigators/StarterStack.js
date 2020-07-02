@@ -5,6 +5,7 @@ import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
 import Home from '../screens/Home';
 import QrScanner from '../screens/QrScanner';
+import Congratulations from '../screens/Congratulations';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +14,7 @@ export default function TransationsStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="QrScanner"
-        component={QrScanner}
+        component={Congratulations}
         options={{
           headerShown: false,
         }}

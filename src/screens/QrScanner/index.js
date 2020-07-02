@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import {StyleSheet, Text, TouchableOpacity, Linking} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
@@ -10,36 +10,39 @@ import {RNCamera} from 'react-native-camera';
 export default function ScanScreen() {
   // eslint-disable-next-line no-undef
   function onSuccess(e) {
-    Linking.openURL(e.data).catch((err) =>
-      console.error('An error occured', err),
-    );
+    console.log(e.data);
   }
 
   return (
-    <QRCodeScanner
-      onRead={onSuccess}
-      flashMode={RNCamera.Constants.FlashMode.torch}
-      topContent={
-        <Text style={styles.centerText}>
-          Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text>{' '}
-          your computer and scan the QR code.
-        </Text>
-      }
-      bottomContent={
-        <TouchableOpacity style={styles.buttonTouchable}>
-          <Text style={styles.buttonText}>OK. Got it!</Text>
-        </TouchableOpacity>
-      }
-    />
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: '#BA0C2F',
+      }}>
+      <QRCodeScanner
+        onRead={onSuccess}
+        topContent={
+          <Text style={styles.centerText}>
+            Aperte no scanner para escanear o código
+          </Text>
+        }
+        bottomContent={
+          <TouchableOpacity style={styles.buttonTouchable}>
+            <Text style={styles.buttonText}>Escanear QrCode</Text>
+          </TouchableOpacity>
+        }
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   centerText: {
-    flex: 1,
     fontSize: 18,
-    padding: 32,
-    color: '#777',
+    padding: 5,
+    color: 'white',
+    marginBottom: 35,
+    fontWeight: 'bold',
   },
   textBold: {
     fontWeight: '500',
@@ -47,9 +50,17 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 21,
-    color: 'rgb(0,122,255)',
+    marginTop: 40,
+    color: '#BA0C2F',
+    backgroundColor: 'white',
+    height: 33,
+    borderRadius: 20,
+    padding: 2,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   buttonTouchable: {
-    padding: 16,
+    padding: 2,
+    fontWeight: 'bold',
   },
 });

@@ -81,6 +81,8 @@ target 'megapp' do
 
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
   target 'megappTests' do
     inherit! :complete
     # Pods for testing

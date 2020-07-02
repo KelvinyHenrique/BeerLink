@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
-import Live from '../screens/Live';
+import VirtualBar from '../screens/VirtualBar';
 import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
 import Home from '../screens/Home'; 
@@ -12,7 +12,7 @@ export default function TransationsStack() {
 
     return( 
         <Stack.Navigator>
-         <Stack.Screen name="Live" component={Live}  options={{
+         <Stack.Screen name="VirtualBar" component={VirtualBar}  options={{
           headerShown:false,
         }}/>  
         <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{

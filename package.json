@@ -29,6 +29,7 @@
     "react-native-screens": "^2.9.0",
     "react-native-svg": "^12.1.0",
     "react-native-svg-transformer": "^0.14.3",
+    "react-native-swipe-up-down": "^1.0.7",
     "react-native-view-overflow": "0.0.5",
     "react-native-zip-archive": "^5.0.2",
     "rn-fetch-blob": "^0.12.0"

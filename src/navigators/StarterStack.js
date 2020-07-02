@@ -1,44 +1,56 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
-import Live from '../screens/Live';
 import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
-import Home from '../screens/Home'; 
+import Home from '../screens/Home';
+import QrScanner from '../screens/QrScanner';
 
 const Stack = createStackNavigator();
 
 export default function TransationsStack() {
-
-    return( 
-        <Stack.Navigator>
-         <Stack.Screen name="Live" component={Live}  options={{
-          headerShown:false,
-        }}/>  
-        <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{
-          headerShown:false,
-        }}/>
-        <Stack.Screen name="Login" component={Login}  options={{
-            title:false,
-          headerShown:true,
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="QrScanner"
+        component={QrScanner}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{
+          title: false,
+          headerShown: true,
           headerStyle: {
-              backgroundColor:'#BA0C2F'
+            backgroundColor: '#BA0C2F',
           },
-          headerTintColor:'#fff'
-        }}/>
-      <Stack.Screen name="SignIn" component={SignIn} options={{
-        title: false,
-        headerShown: true,
-        headerStyle: {
-          backgroundColor: '#BA0C2F'
-        },
-        headerTintColor: '#fff'
-      }} />
+          headerTintColor: '#fff',
+        }}
+      />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{
+          title: false,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#BA0C2F',
+          },
+          headerTintColor: '#fff',
+        }}
+      />
 
-      <Stack.Screen name="Home" component={Home} options={{
-        title: false,
-        headerShown:false,
-      }} />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }

@@ -14,8 +14,8 @@ export default function TransationsStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="QrScanner"
-        component={Mapa}
+        name="FirstScreen"
+        component={FirstScreen}
         options={{
           headerShown: false,
         }}
@@ -44,10 +44,33 @@ export default function TransationsStack() {
           headerTintColor: '#fff',
         }}
       />
-
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="QrScanner"
+        component={QrScanner}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Congratulations"
+        component={Congratulations}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Mapa"
+        component={Mapa}
         options={{
           title: false,
           headerShown: false,

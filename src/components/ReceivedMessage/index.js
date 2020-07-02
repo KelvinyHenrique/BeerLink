@@ -11,8 +11,8 @@ function ReceivedMessage(props) {
             <View>
                 <Albert width={50} height={50} />
             </View>
-            <View style={{justifyContent:'space-between', flexDirection:'column', height:50}}>
-                <Text>{props.name}</Text>
+            <View style={{padding:5,justifyContent:'space-between', flexDirection:'column', height:60, borderRadius:20, backgroundColor:'#CEC', width:'80%', alignItems:'flex-start'}}>
+                <Text style={{fontSize:17}}>{props.name}</Text>
                 <Text>{props.message}</Text>
             </View>
         

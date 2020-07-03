@@ -3,14 +3,17 @@
 import React from 'react';
 
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
-import {RNCamera} from 'react-native-camera';
 
 export default function ScanScreen() {
   // eslint-disable-next-line no-undef
+
+  const navigation = useNavigation();
+
   function onSuccess(e) {
     console.log(e.data);
+    navigation.navigate('QrScanner');
   }
 
   return (

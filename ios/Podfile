@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'megapp' do
-  # Pods for megapp
+target 'beerlink' do
+  # Pods for beerlink
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -83,7 +83,7 @@ target 'megapp' do
 
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
-  target 'megappTests' do
+  target 'beerlinkTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -100,10 +100,10 @@ target 'megapp' do
   end
 end
 
-target 'megapp-tvOS' do
-  # Pods for megapp-tvOS
+target 'beerlink-tvOS' do
+  # Pods for beerlink-tvOS
 
-  target 'megapp-tvOSTests' do
+  target 'beerlink-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

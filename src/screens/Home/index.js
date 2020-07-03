@@ -6,8 +6,26 @@ import { TextInput, TouchableHighlight, ScrollView } from 'react-native-gesture-
 import styles from './styles';
 import UserMessage from '../../components/UserMessage';
 import Colecionavel from '../../components/Colecionavel';
+import { useNavigation } from '@react-navigation/native';
+
 
 function Home() {
+    const navigation = useNavigation();
+
+
+    const goToScanner = () => {
+        navigation.navigate('QrScanner');
+    }
+
+    
+    const goToBar = () => {
+        navigation.navigate('Live');
+    }
+
+    const gotoTests = () => {
+        navigation.navigate('RoutesText');
+    }
+
 
     return (
         <View style={styles.container}>
@@ -15,15 +33,15 @@ function Home() {
             <View style={styles.profilesTop}>
                 <Albert width={57} height={57} />
                 <View style={{flexDirection:'row'}}><Text style={styles.beerLinkText}>Beer</Text><Text style={{fontSize:30,fontWeight:'bold', color:'#FB7800'}}>Link</Text></View>
-                <View style={styles.boxChat}><Chat width={25} height={25}/></View>
+                <TouchableOpacity onPress={gotoTests} style={styles.boxChat}><Chat width={25} height={25}/></TouchableOpacity>
                 
             </View>
             <View style={styles.topContainer}>
                 <Text style={styles.totalHours}>2.000</Text>
                 <Text style={styles.barHours}>Horas de bar</Text>
                 <View style={styles.btnBtn}>
-                    <TouchableOpacity style={styles.btnTop}><Text style={{fontSize:15, fontWeight:'bold', color:'#BA0C2F'}}>Escanear QrCode</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.btnTop}><Text style={{fontSize:15, fontWeight:'bold', color:'#BA0C2F'}}>Entrar no bar</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={goToScanner} style={styles.btnTop}><Text style={{fontSize:15, fontWeight:'bold', color:'#BA0C2F'}}>Escanear QrCode</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={goToBar} style={styles.btnTop}><Text style={{fontSize:15, fontWeight:'bold', color:'#BA0C2F'}}>Entrar no bar</Text></TouchableOpacity>
                 </View>
             </View>
 

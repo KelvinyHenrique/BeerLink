@@ -3,8 +3,13 @@ import {View, Text, Image} from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
 
 import styles from './style';
+import {useNavigation} from '@react-navigation/native';
 
-export default function Map({navigation}) {
+export default function Map() {
+  const navigation = useNavigation();
+  const handleChatNavigation = () => {
+    navigation.navigate('Chat');
+  };
   const mapStyle = [
     {
       elementType: 'geometry',

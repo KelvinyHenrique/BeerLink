@@ -8,6 +8,7 @@ import Home from '../screens/Home';
 import QrScanner from '../screens/QrScanner';
 import Congratulations from '../screens/Congratulations';
 import Mapa from '../screens/Map';
+import Model from '../screens/Models';
 
 const Stack = createStackNavigator();
 
@@ -72,6 +73,22 @@ export default function TransationsStack() {
       <Stack.Screen
         name="Mapa"
         component={Mapa}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Model"
+        component={Model}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={VirtualBar}
         options={{
           title: false,
           headerShown: false,

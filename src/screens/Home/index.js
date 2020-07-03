@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
+  SafeAreaView,
 } from 'react-native';
 import {
   TextInput,
@@ -19,10 +20,19 @@ import {
 import styles from './styles';
 import UserMessage from '../../components/UserMessage';
 import Colecionavel from '../../components/Colecionavel';
+import {useNavigation} from '@react-navigation/native';
 
 function Home() {
+  const navigation = useNavigation();
+  const handleMapNavigation = () => {
+    navigation.navigate('Mapa');
+  };
+  const handleScanNavigation = () => {
+    navigation.navigate('QrScanner');
+  };
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.profilesTop}>
         <Albert width={57} height={57} />
@@ -41,12 +51,16 @@ function Home() {
         <Text style={styles.barHours}>Horas de bar</Text>
         <View style={styles.btnBtn}>
           <TouchableOpacity style={styles.btnTop}>
-            <Text style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}>
+            <Text
+              style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}
+              onPress={handleScanNavigation}>
               Escanear QrCode
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnTop}>
-            <Text style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}>
+            <Text
+              style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}
+              onPress={handleMapNavigation}>
               Entrar no bar
             </Text>
           </TouchableOpacity>
@@ -68,7 +82,7 @@ function Home() {
             fontWeight: 'bold',
             color: '#7E7E7E',
           }}>
-          Colecionaveis
+          Colecionáveis
         </Text>
         <View style={{width: '100%', height: 200, marginBottom: 10}}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -106,7 +120,7 @@ function Home() {
           </ScrollView>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

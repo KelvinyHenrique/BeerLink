@@ -8,53 +8,64 @@ import Home from '../screens/Home';
 import QrScanner from '../screens/QrScanner';
 import Congratulations from '../screens/Congratulations';
 import Mapa from '../screens/Map';
+import Live from '../screens/Live';
 
 const Stack = createStackNavigator();
 
 export default function TransationsStack() {
 
   return (
-      <Stack.Navigator>
-        <Stack.Screen
-          name="QrScanner"
-          component={Mapa}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{
-            title: false,
-            headerShown: true,
-            headerStyle: {
-              backgroundColor: '#BA0C2F',
-            },
-            headerTintColor: '#fff',
-          }}
-        />
-        <Stack.Screen
-          name="SignIn"
-          component={SignIn}
-          options={{
-            title: false,
-            headerShown: true,
-            headerStyle: {
-              backgroundColor: '#BA0C2F',
-            },
-            headerTintColor: '#fff',
-          }}
-        />
+    <Stack.Navigator>
 
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: false,
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{
+          title: false,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#BA0C2F',
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+
+      <Stack.Screen
+        name="Live"
+        component={Live}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name="QrScanner"
+        component={Mapa}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{
+          title: false,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#BA0C2F',
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
   );
 }

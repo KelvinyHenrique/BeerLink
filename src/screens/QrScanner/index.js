@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, StatusBar} from 'react-native';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
@@ -19,6 +19,7 @@ export default function ScanScreen() {
         flex: 1,
         backgroundColor: '#BA0C2F',
       }}>
+          <StatusBar backgroundColor="#BA0C2F" barStyle="light-content" />
       <QRCodeScanner
         onRead={onSuccess}
         topContent={

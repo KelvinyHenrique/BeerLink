@@ -33,12 +33,27 @@ function Home() {
   const handlePrivateNavigation = () => {
     navigation.navigate('Private');
   };
+  const handleProfileNavigation = () => {
+    navigation.navigate('Profile');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.profilesTop}>
-        <Albert width={57} height={57} />
+        <TouchableOpacity onPress={handleProfileNavigation}>
+          <Image
+            source={{
+              uri:
+                'https://avatars3.githubusercontent.com/u/36752711?s=460&u=740b3ce32fb6ce710151f66bdf65cc0cc3580cdc&v=4',
+            }}
+            style={{
+              height: 64,
+              width: 64,
+              borderRadius: 5,
+            }}
+          />
+        </TouchableOpacity>
         <View style={{flexDirection: 'row'}}>
           <Text style={styles.beerLinkText}>Beer</Text>
           <Text style={{fontSize: 30, fontWeight: 'bold', color: '#FB7800'}}>

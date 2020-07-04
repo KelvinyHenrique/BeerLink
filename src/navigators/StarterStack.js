@@ -20,7 +20,7 @@ export default function TransationsStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="FirstScreen"
-        component={Profile}
+        component={FirstScreen}
         options={{
           title: false,
           headerShown: true,
@@ -30,7 +30,6 @@ export default function TransationsStack() {
           headerTintColor: '#fff',
         }}
       />
-
       <Stack.Screen
         name="SignIn"
         component={SignIn}
@@ -55,7 +54,6 @@ export default function TransationsStack() {
           headerTintColor: '#fff',
         }}
       />
-
       <Stack.Screen
         name="Live"
         component={Live}
@@ -63,7 +61,6 @@ export default function TransationsStack() {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name="RoutesText"
         component={Tests}
@@ -71,7 +68,6 @@ export default function TransationsStack() {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name="Congratulations"
         component={Congratulations}
@@ -79,7 +75,6 @@ export default function TransationsStack() {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name="QrScanner"
         component={QrScanner}
@@ -87,7 +82,6 @@ export default function TransationsStack() {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name="Mapa"
         component={Mapa}
@@ -95,7 +89,6 @@ export default function TransationsStack() {
           headerShown: false,
         }}
       />
-
       <Stack.Screen
         name="Home"
         component={Home}
@@ -123,6 +116,14 @@ export default function TransationsStack() {
       <Stack.Screen
         name="Private"
         component={Private}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
         options={{
           title: false,
           headerShown: false,

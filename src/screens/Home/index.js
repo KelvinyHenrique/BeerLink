@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
+  SafeAreaView,
 } from 'react-native';
 import {
   TextInput,
@@ -23,21 +24,18 @@ import {useNavigation} from '@react-navigation/native';
 
 function Home() {
   const navigation = useNavigation();
-
-  const goToScanner = () => {
+  const handleMapNavigation = () => {
+    navigation.navigate('Mapa');
+  };
+  const handleScanNavigation = () => {
     navigation.navigate('QrScanner');
   };
-
-  const goToBar = () => {
-    navigation.navigate('Live');
-  };
-
-  const gotoTests = () => {
-    navigation.navigate('RoutesText');
+  const handlePrivateNavigation = () => {
+    navigation.navigate('Private');
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.profilesTop}>
         <Albert width={57} height={57} />
@@ -47,7 +45,9 @@ function Home() {
             Link
           </Text>
         </View>
-        <TouchableOpacity onPress={gotoTests} style={styles.boxChat}>
+        <TouchableOpacity
+          style={styles.boxChat}
+          onPress={handlePrivateNavigation}>
           <Chat width={25} height={25} />
         </TouchableOpacity>
       </View>
@@ -55,13 +55,17 @@ function Home() {
         <Text style={styles.totalHours}>2.000</Text>
         <Text style={styles.barHours}>Horas de bar</Text>
         <View style={styles.btnBtn}>
-          <TouchableOpacity onPress={goToScanner} style={styles.btnTop}>
-            <Text style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}>
+          <TouchableOpacity style={styles.btnTop}>
+            <Text
+              style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}
+              onPress={handleScanNavigation}>
               Escanear QrCode
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={goToBar} style={styles.btnTop}>
-            <Text style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}>
+          <TouchableOpacity style={styles.btnTop}>
+            <Text
+              style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}
+              onPress={handleMapNavigation}>
               Entrar no bar
             </Text>
           </TouchableOpacity>
@@ -83,13 +87,25 @@ function Home() {
             fontWeight: 'bold',
             color: '#7E7E7E',
           }}>
-          Colecionaveis
+          Colecionáveis
         </Text>
-        <View style={{width: '100%', height: 200, marginBottom: 10}}>
+        <View style={{width: '100%', height: 120, marginBottom: 4}}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Colecionavel />
-            <Colecionavel />
-            <Colecionavel />
+            <Colecionavel
+              img={
+                'https://w7.pngwing.com/pngs/367/225/png-transparent-fizzy-drinks-beer-bottle-cap-computer-icons-beer-text-beer-bottle-plastic-bottle.png'
+              }
+            />
+            <Colecionavel
+              img={
+                'https://free3d.com/imgd/l51516-bottle-beer-corona-78921.jpg'
+              }
+            />
+            <Colecionavel
+              img={
+                'https://ae01.alicdn.com/kf/HTB1cFGTcGzB9uJjSZFMq6xq4XXa6/Bateria-Caneca-Em-Mudan-a-Da-Cor-Sens-vel-Ao-Calor-do-Copo-de-Caf.jpg'
+              }
+            />
           </ScrollView>
         </View>
       </View>
@@ -97,12 +113,12 @@ function Home() {
       <View
         style={{
           width: '90%',
-          height: 200,
+          height: 140,
           alignSelf: 'center',
         }}>
         <Text
           style={{
-            marginTop: 15,
+            marginTop: 0,
             fontSize: 17,
             fontSize: 20,
             fontWeight: 'bold',
@@ -110,18 +126,34 @@ function Home() {
           }}>
           Top 10
         </Text>
-        <View style={{width: '100%', height: 235, paddingTop: 10}}>
+        <View style={{width: '100%', height: 235, paddingTop: 3}}>
           <ScrollView horizontal={false} showsVerticalScrollIndicator={false}>
-            <UserMessage />
-            <UserMessage />
-            <UserMessage />
-            <UserMessage />
-            <UserMessage />
-            <UserMessage />
+            <UserMessage
+              name={'João das Neves'}
+              locale={'Montes Claros - MG'}
+              rank={'500 pontos'}
+              img={
+                'https://avatars3.githubusercontent.com/u/36752711?s=460&u=740b3ce32fb6ce710151f66bdf65cc0cc3580cdc&v=4'
+              }
+            />
+            <UserMessage
+              name={'Zé do bar'}
+              locale={'Curitiba - PR'}
+              rank={'260 pontos'}
+              img={'https://avatars3.githubusercontent.com/u/5342402?s=460&v=4'}
+            />
+            <UserMessage
+              name={'Rei do Achocolatado'}
+              locale={'Caratinga - MG'}
+              rank={'020 pontos'}
+              img={
+                'https://avatars0.githubusercontent.com/u/21090726?s=460&v=4'
+              }
+            />
           </ScrollView>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

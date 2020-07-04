@@ -1,7 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
-import VirtualBar from '../screens/VirtualBar';
 import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
 import Home from '../screens/Home';
@@ -10,7 +9,10 @@ import Congratulations from '../screens/Congratulations';
 import Mapa from '../screens/Map';
 import Live from '../screens/Live';
 import Tests from '../screens/ScreenTests';
-
+import Model from '../screens/Models';
+import Ar from '../screens/Ar';
+import Private from '../screens/Private';
+import Profile from '../screens/Profile';
 const Stack = createStackNavigator();
 
 export default function TransationsStack() {
@@ -18,7 +20,7 @@ export default function TransationsStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="FirstScreen"
-        component={FirstScreen}
+        component={Profile}
         options={{
           title: false,
           headerShown: true,
@@ -97,6 +99,30 @@ export default function TransationsStack() {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Model"
+        component={Model}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={Live}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Private"
+        component={Private}
         options={{
           title: false,
           headerShown: false,

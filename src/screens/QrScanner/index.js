@@ -5,12 +5,17 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View, StatusBar} from 'react-native';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
-import {RNCamera} from 'react-native-camera';
+import {useNavigation} from '@react-navigation/native';
 
 export default function ScanScreen() {
+  const navigate = useNavigation();
   // eslint-disable-next-line no-undef
   function onSuccess(e) {
-    console.log(e.data);
+    if (e.data == 'code') {
+      navigate.navigate('Model');
+    } else {
+      alert('Código inválido!');
+    }
   }
 
   return (

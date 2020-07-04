@@ -2,6 +2,9 @@ import React from 'react';
 import {StyleSheet, Text, View, Button, Platform, Slider} from 'react-native';
 import {ModelView} from 'react-native-3d-model-view';
 
+import ARModelView, {ModelTypes} from 'react-native-3d-model-view';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+
 export default class AnimatedModelScreen extends React.Component {
   state = {
     message: '',
@@ -54,26 +57,22 @@ export default class AnimatedModelScreen extends React.Component {
     this.setState({animationProgress: event.nativeEvent.progress});
   };
 
+  // base model https://github.com/BonnierNews/react-native-3d-model-view/blob/master/example/obj/Hamburger.zip?raw=true
+
   render() {
     const {message, isPlaying, animationProgress} = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.modelContainer}>
-          <Text>{message}</Text>
+          <Text style={styles.text}> Toque para mover seu colecionável </Text>
           <ModelView
-            // ref={(modelView) => {
-            //   this.modelView = modelView;
-            // }}
             style={styles.modelView}
             source={{
-              zip:
-                'https://github.com/BonnierNews/react-native-3d-model-view/blob/master/example/obj/Hamburger.zip?raw=true',
+              zip: require('../../assets/Corona.zip'),
             }}
             onLoadModelSuccess={this.onLoadModelSuccess}
             onLoadModelError={this.onLoadModelError}
             onAnimationStart={this.onAnimationStart}
-            // onAnimationStop={this.onAnimationStop}
-            // onAnimationUpdate={this.onAnimationUpdate}
           />
         </View>
       </View>
@@ -86,6 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#BA0C2F',
   },
   modelContainer: {
     padding: 10,
@@ -93,10 +93,18 @@ const styles = StyleSheet.create({
   },
   modelView: {
     width: '100%',
-    height: 300,
+    height: 450,
     backgroundColor: 'white',
   },
   buttonContainer: {
     paddingVertical: 10,
+  },
+  text: {
+    backgroundColor: 'white',
+    textAlign: 'center',
+    fontSize: 20,
+    padding: 10,
+    borderTopLeftRadius: 13,
+    borderTopRightRadius: 13,
   },
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import FirstScreen from '../screens/FirstScreen';
 import VirtualBar from '../screens/VirtualBar';
 import Login from '../screens/Login';
@@ -14,9 +14,20 @@ import Tests from '../screens/ScreenTests';
 const Stack = createStackNavigator();
 
 export default function TransationsStack() {
-
   return (
     <Stack.Navigator>
+<<<<<<< HEAD
+      <Stack.Screen
+        name="FirstScreen"
+        component={FirstScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+=======
 
 
       
@@ -36,6 +47,7 @@ export default function TransationsStack() {
       <Stack.Screen
         name="SignIn"
         component={SignIn}
+>>>>>>> 1d95a31021419d5afabe7914bd76d8507696e0f5
         options={{
           title: false,
           headerShown: true,
@@ -46,8 +58,13 @@ export default function TransationsStack() {
         }}
       />
       <Stack.Screen
+<<<<<<< HEAD
+        name="SignIn"
+        component={SignIn}
+=======
         name="Login"
         component={Login}
+>>>>>>> 1d95a31021419d5afabe7914bd76d8507696e0f5
         options={{
           title: false,
           headerShown: true,
@@ -57,6 +74,24 @@ export default function TransationsStack() {
           headerTintColor: '#fff',
         }}
       />
+<<<<<<< HEAD
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="QrScanner"
+        component={QrScanner}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
+=======
 
       <Stack.Screen
         name="Live"
@@ -75,10 +110,17 @@ export default function TransationsStack() {
       />
 
 
+>>>>>>> 1d95a31021419d5afabe7914bd76d8507696e0f5
       <Stack.Screen
         name="Congratulations"
         component={Congratulations}
         options={{
+<<<<<<< HEAD
+          title: false,
+          headerShown: false,
+        }}
+      />
+=======
           headerShown: false,
         }}
       />
@@ -92,10 +134,13 @@ export default function TransationsStack() {
       />
 
 
+>>>>>>> 1d95a31021419d5afabe7914bd76d8507696e0f5
       <Stack.Screen
         name="Mapa"
         component={Mapa}
         options={{
+<<<<<<< HEAD
+=======
           headerShown: false,
         }}
       />
@@ -105,6 +150,7 @@ export default function TransationsStack() {
         name="Home"
         component={Home}
         options={{
+>>>>>>> 1d95a31021419d5afabe7914bd76d8507696e0f5
           title: false,
           headerShown: false,
         }}

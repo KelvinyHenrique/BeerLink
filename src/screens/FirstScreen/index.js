@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import GoogleIcon from '../../assets/google.svg';
 import {useNavigation} from '@react-navigation/native';
-import Logo from '../../assets/BeerLink_transparente.png';
+import Logo from '../../assets/logo.svg';
 
 function FirstScreen() {
   const navigation = useNavigation();
@@ -24,11 +24,10 @@ function FirstScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.BoxContent}>
-        <Image
-          source={Logo}
+        <Logo
           style={{
-            height: 240,
-            width: 350,
+            height: 270,
+            width: 270,
             alignSelf: 'center',
           }}
         />

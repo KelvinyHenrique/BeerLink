@@ -1,12 +1,8 @@
 import React, {useRef, useState} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-
+import {Text, View, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
-
 import Chat from './Chat/index';
-import {ScrollView} from 'react-native-gesture-handler';
-
-// You can import from local files
+import { useNavigation } from '@react-navigation/native';
 
 const interations = [
   {
@@ -40,8 +36,14 @@ const interations = [
 ];
 
 function interationBar(image, name) {
+
+  const navigation = useNavigation();
+  const handlePrivateNavigation = () => {
+    navigation.navigate('Private');
+  };
+
   return (
-    <View style={{marginLeft: 7, marginRight: 7, alignItems: 'center'}}>
+    <TouchableOpacity style={{marginLeft: 7, marginRight: 7, alignItems: 'center'}} onPress={handlePrivateNavigation}>
       <Image
         source={{uri: image}}
         style={{width: 50, height: 50, borderRadius: 25}}
@@ -52,14 +54,13 @@ function interationBar(image, name) {
         }}>
         {name}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
 export default function Bar() {
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(true);
-
   return (
     <View style={styles.container}>
       <YoutubePlayer

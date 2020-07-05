@@ -9,7 +9,7 @@ const App = () => {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      primary: 'rgb(255, 45, 85)',
+      primary: '#BA0C2F',
       background: '#FFF',
     },
   };

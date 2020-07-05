@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, { useRef, useEffect } from 'react';
 import Albert from '../../assets/albert.svg';
 import Chat from '../../assets/chat.svg';
 import {
@@ -20,7 +20,7 @@ import {
 import styles from './styles';
 import UserMessage from '../../components/UserMessage';
 import Colecionavel from '../../components/Colecionavel';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 function Home() {
   const navigation = useNavigation();
@@ -48,15 +48,15 @@ function Home() {
                 'https://avatars3.githubusercontent.com/u/36752711?s=460&u=740b3ce32fb6ce710151f66bdf65cc0cc3580cdc&v=4',
             }}
             style={{
-              height: 64,
-              width: 64,
-              borderRadius: 5,
+              height: 60,
+              width: 60,
+              borderRadius: 30,
             }}
           />
         </TouchableOpacity>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{ flexDirection: 'row' }}>
           <Text style={styles.beerLinkText}>Beer</Text>
-          <Text style={{fontSize: 30, fontWeight: 'bold', color: '#FB7800'}}>
+          <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#FB7800' }}>
             Link
           </Text>
         </View>
@@ -72,15 +72,14 @@ function Home() {
         <View style={styles.btnBtn}>
           <TouchableOpacity style={styles.btnTop}>
             <Text
-              style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}
+              style={{ fontSize: 15, fontWeight: 'bold', color: '#BA0C2F' }}
               onPress={handleScanNavigation}>
               Escanear QrCode
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnTop}>
+          <TouchableOpacity style={styles.btnTop} onPress={handleMapNavigation}>
             <Text
-              style={{fontSize: 15, fontWeight: 'bold', color: '#BA0C2F'}}
-              onPress={handleMapNavigation}>
+              style={{ fontSize: 15, fontWeight: 'bold', color: '#BA0C2F' }}>
               Entrar no bar
             </Text>
           </TouchableOpacity>
@@ -90,13 +89,13 @@ function Home() {
       <View
         style={{
           width: '90%',
-          height: 250,
+          height: 230,
           alignSelf: 'center',
         }}>
         <Text
           style={{
             marginTop: 15,
-            marginBottom: 5,
+            marginBottom: 15,
             fontSize: 17,
             fontSize: 20,
             fontWeight: 'bold',
@@ -104,7 +103,7 @@ function Home() {
           }}>
           Colecionáveis
         </Text>
-        <View style={{width: '100%', height: 120, marginBottom: 4}}>
+        <View style={{ width: '100%', height: 150, marginBottom: 4 }}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <Colecionavel
               img={
@@ -128,12 +127,12 @@ function Home() {
       <View
         style={{
           width: '90%',
-          height: 140,
           alignSelf: 'center',
         }}>
         <Text
           style={{
             marginTop: 0,
+            marginBottom: 10,
             fontSize: 17,
             fontSize: 20,
             fontWeight: 'bold',
@@ -141,7 +140,7 @@ function Home() {
           }}>
           Top 10
         </Text>
-        <View style={{width: '100%', height: 235, paddingTop: 3}}>
+        <View style={{ width: '100%', height: 235, paddingTop: 3 }}>
           <ScrollView horizontal={false} showsVerticalScrollIndicator={false}>
             <UserMessage
               name={'João das Neves'}
@@ -151,19 +150,20 @@ function Home() {
                 'https://avatars3.githubusercontent.com/u/36752711?s=460&u=740b3ce32fb6ce710151f66bdf65cc0cc3580cdc&v=4'
               }
             />
+
+            <UserMessage
+              name={'Rei do Achocolatado'}
+              locale={'Caratinga - MG'}
+              rank={'499 pontos'}
+              img={
+                'https://avatars0.githubusercontent.com/u/21090726?s=460&v=4'
+              }
+            />
             <UserMessage
               name={'Zé do bar'}
               locale={'Curitiba - PR'}
               rank={'260 pontos'}
               img={'https://avatars3.githubusercontent.com/u/5342402?s=460&v=4'}
-            />
-            <UserMessage
-              name={'Rei do Achocolatado'}
-              locale={'Caratinga - MG'}
-              rank={'020 pontos'}
-              img={
-                'https://avatars0.githubusercontent.com/u/21090726?s=460&v=4'
-              }
             />
           </ScrollView>
         </View>

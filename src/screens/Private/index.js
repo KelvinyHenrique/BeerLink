@@ -12,6 +12,8 @@ function interationBar(name) {
         display: 'flex',
         flexDirection: 'row',
         marginTop: 10,
+        alignItems:'center',
+        marginBottom:5,
       }}>
       <Image
         source={{
@@ -21,12 +23,12 @@ function interationBar(name) {
         style={{
           height: 40,
           width: 40,
+          borderRadius:20,
         }}
       />
       <Text
         style={{
           padding: 10,
-          size: 40,
           justifyContent: 'center',
           fontSize: 20,
           color: 'white',
@@ -60,7 +62,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <YoutubePlayer
+      <View style={{
+        width:'100%',
+        height:250
+      }}>
+         <YoutubePlayer
         ref={playerRef}
         height={200}
         videoId={'gjit4OgRZFM'}
@@ -76,9 +82,11 @@ export default function App() {
           showClosedCaptions: true,
         }}
       />
+      </View>
+     
       <View
         style={{
-          height: 320,
+          height: 420,
           backgroundColor: '#2E2E2E',
           borderRadius: 20,
         }}>
@@ -92,7 +100,7 @@ export default function App() {
         </View>
         <View
           style={{
-            height: 280,
+            height: '100%',
             backgroundColor: '#E6E6E6',
             borderRadius: 20,
             marginTop: 3,

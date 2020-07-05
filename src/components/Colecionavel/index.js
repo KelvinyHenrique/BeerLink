@@ -13,7 +13,7 @@ function Colecionavel(props) {
     <TouchableOpacity
       style={styles.container}
       onLongPress={handleModelNavigation}>
-      <Image source={{uri: props.img}} style={{width: 100, height: 100}} />
+      <Image source={{uri: props.img}} style={{width: 120, height: 120}} />
     </TouchableOpacity>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StatusBar} from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
 
 import styles from './style';
@@ -295,7 +295,7 @@ export default function Map() {
           longitude: -43.8717676,
         }}
       />
-
+<StatusBar backgroundColor="#1d2c4d" barStyle="light-content" />
       {trades.map((trade) => (
         <Marker
           key={trade._id}

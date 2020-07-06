@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text, SafeAreaView, Image, StyleSheet, View} from 'react-native';
+import {Text, SafeAreaView, Image, StyleSheet, View, StatusBar} from 'react-native';
 
 export default function Profile() {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+        <StatusBar backgroundColor="#BA0C2F" barStyle="light-content" />
+      <View style={{alignItems:'center', justifyContent:"center"}}>
         <Image
           source={{
             uri:
@@ -34,22 +35,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#BA0C2F',
   },
   image: {
-    height: 160,
-    width: 160,
+    height: 200,
+    width: 200,
     borderRadius: 20,
   },
   name: {
-    fontSize: 17,
+    marginTop:20,
+    fontSize: 24,
     color: 'white',
     fontWeight: 'bold',
   },
   edit: {
+    padding:10,
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
     backgroundColor: '#ED6A5E',
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 30,
     borderRadius: 7,
   },
   cash: {

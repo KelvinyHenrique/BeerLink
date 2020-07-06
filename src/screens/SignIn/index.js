@@ -49,7 +49,7 @@ function SignIn() {
 
                 <View style={{ width: '85%' }}>
                     <View>
-                        <Text style={{ fontSize: 15, color: '#CECECE' }}>Name</Text>
+                        <Text style={{ fontSize: 15, color: '#CECECE' }}>Nome</Text>
                         <TextInput style={{ width: '100%', height: 40, backgroundColor: '#F0F0F0', marginTop: 10, borderRadius: 7, }} />
                     </View>
                     <View>

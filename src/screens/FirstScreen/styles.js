@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#B21039',
+    backgroundColor: '#BA0C2F',
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
@@ -16,8 +16,9 @@ export default StyleSheet.create({
   boxHello: {
     width: '100%',
     height: 120,
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
   },
   welcome: {
     fontSize: 40,
@@ -30,7 +31,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     alignSelf: 'center',
-    marginLeft: 70,
   },
   subtitle: {
     color: '#FFF',

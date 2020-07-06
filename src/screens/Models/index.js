@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, Platform, Slider} from 'react-native';
+import {StyleSheet, Text, View, Button, Platform, Slider, StatusBar} from 'react-native';
 import {ModelView} from 'react-native-3d-model-view';
 
 import ARModelView, {ModelTypes} from 'react-native-3d-model-view';
@@ -63,6 +63,7 @@ export default class AnimatedModelScreen extends React.Component {
     const {message, isPlaying, animationProgress} = this.state;
     return (
       <View style={styles.container}>
+         <StatusBar backgroundColor="#BA0C2F" barStyle="dark-content" />
         <View style={styles.modelContainer}>
           <Text style={styles.text}> Toque para mover seu colecionável </Text>
           <ModelView
